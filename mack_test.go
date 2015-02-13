@@ -53,54 +53,11 @@ func TestRun(t *testing.T) {
   }
 
   // Valid commands, comment out for active development
-  goodAlert := AlertOptions{
-    Title: "AlertBox",
-  }
-  goodAlert2 := AlertOptions{
-    Title: "AlertBox",
-    Message: "Alert message",
-    Style: "informational",
-    Duration: 2,
-    Buttons: "One, Two, Three",
-    CancelButton: "Three",
-    DefaultButton: "One",
-  }
-  goodDialog := DialogOptions{
-    Text: "Text",
-  }
-  goodDialog2 := DialogOptions{
-    Text: "Text",
-    Title: "DialogBox",
-    Answer: "default answer",
-    HiddenAnswer: true,
-    Icon: "note",
-    Duration: 2,
-    Buttons: "One, Two, Three",
-    CancelButton: "One",
-    DefaultButton: "Three",
-  }
-
   validCommands := []ErrorAssert{
     ErrorAssert{actual: Say("hi!")},
     ErrorAssert{actual: Say("hi!", "Agnes")},
     ErrorAssert{actual: Beep(1)},
     ErrorAssert{actual: Beep(2)},
-    ErrorAssert{actual: Dialog("Dialog")},
-    ErrorAssert{actual: Dialog("Dialog", "Title")},
-    ErrorAssert{actual: Dialog("Dialog", "Title", "Answer")},
-    ErrorAssert{actual: Dialog("Dialog", "Title", "Answer", "2")},
-    ErrorAssert{actual: Alert("Alert")},
-    ErrorAssert{actual: Alert("Alert", "Message")},
-    ErrorAssert{actual: Alert("Alert", "Message", "critical")},
-    ErrorAssert{actual: Alert("Alert", "Message", "warning", "2")},
-    ErrorAssert{actual: Notify("Notification")},
-    ErrorAssert{actual: Notify("Notification", "Title")},
-    ErrorAssert{actual: Notify("Notification", "Title", "Subtitle")},
-    ErrorAssert{actual: Notify("Notification", "Title", "Subtitle", "Ping")},
-    ErrorAssert{actual: AlertBox(goodAlert)},
-    ErrorAssert{actual: AlertBox(goodAlert2)},
-    ErrorAssert{actual: DialogBox(goodDialog)},
-    ErrorAssert{actual: DialogBox(goodDialog2)},
   }
   commands = append(commands, validCommands...)
 
