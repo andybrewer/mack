@@ -4,7 +4,7 @@ Mack is a Golang wrapper for AppleScript. With Mack, you can easily trigger OS X
 ## Installation
 Mack requires OS X.
 
-`go get github.com/everdev/popp`
+`go get github.com/everdev/mack`
 
 ## Usage
 Mack is ideal for local workflow optimization, OS X binary applications, or just spicing things up. For example:
