@@ -53,7 +53,7 @@ func TestRun(t *testing.T) {
   }
 
   // Valid commands, comment out for active development
-  /*goodAlert := AlertOptions{
+  goodAlert := AlertOptions{
     Title: "AlertBox",
   }
   goodAlert2 := AlertOptions{
@@ -102,7 +102,7 @@ func TestRun(t *testing.T) {
     ErrorAssert{actual: DialogBox(goodDialog)},
     ErrorAssert{actual: DialogBox(goodDialog2)},
   }
-  commands = append(commands, validCommands...)*/
+  commands = append(commands, validCommands...)
 
   runErrorAssertTests("run", commands, t)
 }
