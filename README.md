@@ -24,7 +24,7 @@ func main() {
 ```
 
 ### App: ToDo list
-Add some UX to Mac binary applications
+Add some cheap UI to your applications
 ```
 package main
 
