@@ -23,8 +23,38 @@ func main() {
 }
 ```
 
+### Workflow: Open applications
+Interact with any Mac application from your code, like opening Finder to the right folder, or opening a URL to a HowTo video.
+```
+package main
+
+import (
+  "github.com/everdev/mack"
+)
+
+func main() {
+  browsers := []string{"Some new browser", "Google Chrome", "Firefox", "Safari"}
+  opened := false
+
+  for _, browser := range browsers {
+    err := mack.Tell(browser, `open location "http://youtube.com/my-intro-video"`)
+    if err != nil {
+      // handle error
+    } else {
+      // exit when we found a browser that works
+      opened = true
+      break
+    }
+  }
+
+  if !opened {
+    // alert user that a common browser could not be found
+  }
+}
+```
+
 ### App: ToDo list
-Add some cheap UI to your applications
+Add a cheap GUI to your applications
 ```
 package main
 
@@ -53,11 +83,16 @@ Currently, Mack supports the following AppleScript commands:
 * Display Dialog
 * Display Notification
 * Say
+* Tell
 
 Full documentation is available at: [godoc.org/github.com/everdev/mack](http://godoc.org/github.com/everdev/mack)
 
 ## Links
 * [AppleScript Command Reference Docs](https://developer.apple.com/library/mac/documentation/AppleScript/Conceptual/AppleScriptLangGuide/reference/ASLR_cmds.html)
+
+## Contributors
+Andy Brewer ([everdev])(https://github.com/everdev)
+Hiroaki Nakamura ([hnakamur])(https://github.com/hnakamur)
 
 ## License
 MIT
