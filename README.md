@@ -24,7 +24,7 @@ func main() {
 ```
 
 ### Workflow: Open applications
-Interact with any Mac application from your code, like opening Finder to the right folder, or opening a URL to a HowTo video.
+Interact with any Mac application from your code, like opening a URL to a HowTo video.
 ```
 package main
 
@@ -37,7 +37,7 @@ func main() {
   opened := false
 
   for _, browser := range browsers {
-    err := mack.Tell(browser, `open location "http://youtube.com/my-intro-video"`)
+    err := mack.Tell(browser, `open location "http://youtube.com/my-howto-video"`)
     if err != nil {
       // handle error
     } else {
@@ -91,8 +91,8 @@ Full documentation is available at: [godoc.org/github.com/everdev/mack](http://g
 * [AppleScript Command Reference Docs](https://developer.apple.com/library/mac/documentation/AppleScript/Conceptual/AppleScriptLangGuide/reference/ASLR_cmds.html)
 
 ## Contributors
-Andy Brewer ([everdev])(https://github.com/everdev)
-Hiroaki Nakamura ([hnakamur])(https://github.com/hnakamur)
+* Andy Brewer ([everdev])(https://github.com/everdev)
+* Hiroaki Nakamura ([hnakamur])(https://github.com/hnakamur)
 
 ## License
 MIT
