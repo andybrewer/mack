@@ -91,8 +91,8 @@ Full documentation is available at: [godoc.org/github.com/everdev/mack](http://g
 * [AppleScript Command Reference Docs](https://developer.apple.com/library/mac/documentation/AppleScript/Conceptual/AppleScriptLangGuide/reference/ASLR_cmds.html)
 
 ## Contributors
-* Andy Brewer ([everdev])(https://github.com/everdev)
-* Hiroaki Nakamura ([hnakamur])(https://github.com/hnakamur)
+* Andy Brewer ([everdev](https://github.com/everdev))
+* Hiroaki Nakamura ([hnakamur](https://github.com/hnakamur))
 
 ## License
 MIT
