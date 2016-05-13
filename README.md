@@ -11,7 +11,7 @@ Mack is ideal for local workflow optimization, OS X binary applications, or just
 
 ### Workflow: Process notification
 When executing a long-running process, trigger a notification so you can get back to development without having to check the execution status.
-```
+```go
 package main
 
 import "github.com/everdev/mack"
@@ -25,7 +25,7 @@ func main() {
 
 ### Workflow: Open applications
 Interact with any Mac application from your code, like opening a URL to a HowTo video.
-```
+```go
 package main
 
 import (
@@ -55,7 +55,7 @@ func main() {
 
 ### App: ToDo list
 Add a cheap GUI to your applications
-```
+```go
 package main
 
 import "github.com/everdev/mack"
@@ -71,14 +71,37 @@ func main() {
   } else {
     newToDo := response.Text
     // add ToDo to the database
-    mack.Notify("Added " + newToDo + " to your calendar")  
+    mack.Notify("Added " + newToDo + " to your calendar")
   }
+}
+```
+
+### Workflow: clipboard
+Manipulate the clipboard
+```go
+package main
+
+import (
+  "fmt"
+  "github.com/everdev/mack"
+)
+
+func main() {
+  // Output the content of the clipboard
+  content, _ := mack.Clipboard()
+  fmt.Println(content)
+
+  // Change the content of the clipboard
+  mack.SetClipboard("Hello World!")
+  content, _ = mack.Clipboard()
+  fmt.Println(content)
 }
 ```
 
 ## Documentation
 Currently, Mack supports the following AppleScript commands:
 * Beep
+* Clipboard
 * Display Alert
 * Display Dialog
 * Display Notification
@@ -93,6 +116,7 @@ Full documentation is available at: [godoc.org/github.com/everdev/mack](http://g
 ## Contributors
 * Andy Brewer ([everdev](https://github.com/everdev))
 * Hiroaki Nakamura ([hnakamur](https://github.com/hnakamur))
+* Antoine Augusti ([AntoineAugusti](https://github.com/AntoineAugusti))
 
 ## License
 MIT
