@@ -117,6 +117,7 @@ Full documentation is available at: [godoc.org/github.com/everdev/mack](http://g
 * Andy Brewer ([everdev](https://github.com/everdev))
 * Hiroaki Nakamura ([hnakamur](https://github.com/hnakamur))
 * Antoine Augusti ([AntoineAugusti](https://github.com/AntoineAugusti))
+* Gareth Watts ([gwatts](https://github.com/gwatts))
 
 ## License
 MIT
