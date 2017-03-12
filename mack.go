@@ -74,6 +74,15 @@ func build(params ...string) string {
   return strings.Join(validParams, " ")
 }
 
+// Construct an applescript string list
+func mkList(items ...string) string {
+	var result []string
+	for _, item := range items {
+		result = append(result, wrapInQuotes(item))
+	}
+	return "{" + strings.Join(result, ",") + "}"
+}
+
 // Parse and format the button values
 func makeButtonList(buttons string) string {
   buttonList := strings.Split(buttons, ",")
