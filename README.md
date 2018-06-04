@@ -1,3 +1,5 @@
+> PLEASE NOTE: This project is no longer maintained. Please feel free to fork and maintain as desired.
+
 # Mack
 Mack is a Golang wrapper for AppleScript. With Mack, you can easily trigger OS X desktop notifications and system sounds from within your Go application.
 
