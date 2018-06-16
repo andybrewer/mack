@@ -1,7 +1,7 @@
 /*
 ** Say
 ** Create a voice notification
-*/
+ */
 
 package mack
 
@@ -22,17 +22,17 @@ package mack
 //                //     Sara Compact, Satu Compact, Sin-ji Compact, Tarik Compact, Tessa Compact, Thomas Compact, Ting-Ting Compact, Trinoids,
 //                //     Veena Compact, Vicki, Victoria, Whisper, Xander Compact, Yelda Compact, Yuna Compact, Zarvox, Zosia Compact, Zuzana Compact
 func Say(text string, options ...string) error {
-  _, err := run(buildSay(text, options))
-  return err
+	_, err := run(buildSay(text, options))
+	return err
 }
 
 // Parse the say options and build the command
 func buildSay(text string, options []string) string {
-  var voice string
-  if len(options) > 0 && options[0] != "" {
-    voice = "using " + wrapInQuotes(options[0])
-  }
+	var voice string
+	if len(options) > 0 && options[0] != "" {
+		voice = "using " + wrapInQuotes(options[0])
+	}
 
-  text = wrapInQuotes(text)
-  return build("say", text, voice)
+	text = wrapInQuotes(text)
+	return build("say", text, voice)
 }

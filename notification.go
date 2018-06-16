@@ -1,7 +1,7 @@
 /*
 ** Mack: Notification
 ** Create a desktop notification
-*/
+ */
 
 package mack
 
@@ -21,23 +21,23 @@ package mack
 //                   // Sounds list located at: /System/Library/Sounds/
 //                   // ex. Basso, Blow, Bottle, Frog, Funk, Glass, Hero, Morse, Ping, Pop, Purr, Sosumi, Submarine, Tink
 func Notify(text string, options ...string) error {
-  _, err := run(buildNotification(text, options))
-  return err
+	_, err := run(buildNotification(text, options))
+	return err
 }
 
 // Parse the notify options and build the command
 func buildNotification(text string, options []string) string {
-  var title, subtitle, sound string
-  if len(options) > 0 && options[0] != "" {
-    title = "with title " + wrapInQuotes(options[0])
-  }
-  if len(options) > 1 && options[1] != "" {
-    subtitle = "subtitle " + wrapInQuotes(options[1])
-  }
-  if len(options) > 2 && options[2] != "" {
-    sound = "sound name " + wrapInQuotes(options[2])
-  }
+	var title, subtitle, sound string
+	if len(options) > 0 && options[0] != "" {
+		title = "with title " + wrapInQuotes(options[0])
+	}
+	if len(options) > 1 && options[1] != "" {
+		subtitle = "subtitle " + wrapInQuotes(options[1])
+	}
+	if len(options) > 2 && options[2] != "" {
+		sound = "sound name " + wrapInQuotes(options[2])
+	}
 
-  text = wrapInQuotes(text)
-  return build("display notification", text, title, subtitle, sound)
+	text = wrapInQuotes(text)
+	return build("display notification", text, title, subtitle, sound)
 }

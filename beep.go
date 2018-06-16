@@ -1,12 +1,12 @@
 /*
 ** Mack: Beep
 ** Create a beep notification
-*/
+ */
 
 package mack
 
 import (
-  "strconv"
+	"strconv"
 )
 
 // Beep triggers a given number of system beeps.
@@ -17,11 +17,11 @@ import (
 //
 //  times int  // Required - The number of beeps to play
 func Beep(times int) error {
-  _, err := run(buildBeep(times))
-  return err
+	_, err := run(buildBeep(times))
+	return err
 }
 
 // Parse the beep options and build the command
 func buildBeep(times int) string {
-  return build("beep", strconv.Itoa(times))
+	return build("beep", strconv.Itoa(times))
 }
