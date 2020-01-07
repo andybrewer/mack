@@ -1,12 +1,10 @@
-> PLEASE NOTE: This project is no longer maintained. Please feel free to fork and maintain as desired.
-
 # Mack
 Mack is a Golang wrapper for AppleScript. With Mack, you can easily trigger OS X desktop notifications and system sounds from within your Go application.
 
 ## Installation
 Mack requires OS X.
 
-`go get github.com/everdev/mack`
+`go get github.com/andybrewer/mack`
 
 ## Usage
 Mack is ideal for local workflow optimization, OS X binary applications, or just spicing things up. For example:
@@ -16,7 +14,7 @@ When executing a long-running process, trigger a notification so you can get bac
 ```go
 package main
 
-import "github.com/everdev/mack"
+import "github.com/andybrewer/mack"
 
 func main() {
   mack.Say("Starting process")
@@ -31,7 +29,7 @@ Interact with any Mac application from your code, like opening a URL to a HowTo 
 package main
 
 import (
-  "github.com/everdev/mack"
+  "github.com/andybrewer/mack"
 )
 
 func main() {
@@ -60,7 +58,7 @@ Add a cheap GUI to your applications
 ```go
 package main
 
-import "github.com/everdev/mack"
+import "github.com/andybrewer/mack"
 
 func main() {
   response, err := mack.Dialog("Enter a ToDo", "ToDo Wizard", "My new ToDo")
@@ -85,7 +83,7 @@ package main
 
 import (
   "fmt"
-  "github.com/everdev/mack"
+  "github.com/andybrewer/mack"
 )
 
 func main() {
@@ -110,13 +108,13 @@ Currently, Mack supports the following AppleScript commands:
 * Say
 * Tell
 
-Full documentation is available at: [godoc.org/github.com/everdev/mack](http://godoc.org/github.com/everdev/mack)
+Full documentation is available at: [godoc.org/github.com/andybrewer/mack](http://godoc.org/github.com/andybrewer/mack)
 
 ## Links
 * [AppleScript Command Reference Docs](https://developer.apple.com/library/mac/documentation/AppleScript/Conceptual/AppleScriptLangGuide/reference/ASLR_cmds.html)
 
 ## Contributors
-* Andy Brewer ([everdev](https://github.com/everdev))
+* Andy Brewer ([andybrewer](https://github.com/andybrewer))
 * Hiroaki Nakamura ([hnakamur](https://github.com/hnakamur))
 * Antoine Augusti ([AntoineAugusti](https://github.com/AntoineAugusti))
 * Gareth Watts ([gwatts](https://github.com/gwatts))
