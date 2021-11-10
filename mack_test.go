@@ -55,7 +55,7 @@ func TestRun(t *testing.T) {
   // Valid commands, comment out for active development
   validCommands := []ErrorAssert{
     ErrorAssert{actual: Say("hi!")},
-    ErrorAssert{actual: Say("hi!", "Agnes")},
+    ErrorAssert{actual: Say("hi!", "Fred")},
     ErrorAssert{actual: Beep(1)},
     ErrorAssert{actual: Beep(2)},
   }
@@ -80,8 +80,8 @@ func TestWrapInQuotes(t *testing.T) {
 func TestBuild(t *testing.T) {
   stringAssertTests := []StringAssert{
     StringAssert{
-      actual: build("say","\"Hello world!\"", "using \"Agnes\""),
-      expected: "say \"Hello world!\" using \"Agnes\"",
+      actual: build("say","\"Hello world!\"", "using \"Fred\""),
+      expected: "say \"Hello world!\" using \"Fred\"",
     },
   }
 
