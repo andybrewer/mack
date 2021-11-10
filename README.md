@@ -37,7 +37,7 @@ func main() {
   opened := false
 
   for _, browser := range browsers {
-    err := mack.Tell(browser, `open location "http://youtube.com/my-howto-video"`)
+    _, err := mack.Tell(browser, `open location "http://youtube.com/my-howto-video"`)
     if err != nil {
       // handle error
     } else {
