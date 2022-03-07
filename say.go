@@ -13,7 +13,7 @@ package mack
 //
 //  text string   // Required - What the system voice will say
 //  voice string  // Optional - The name of the system voice, otherwise defaults to system preferences
-//                // Voice list located at: /System/Library/Speech/Voices
+//                // Voice list located at: /System/Library/SpeechBase/Voices
 //                // ex. Agnes, Albert, Alex, Alice Compact, Alva Compact, Amelie Compact, Anna Compact, BadNews, Bahh, Bells, Boing, Bruce,
 //                //     Bubbles, Carmit Compact, Cellos, Damayanti Compact, Daniel Compact, Deranged, Diego Compact, Ellen Compact,
 //                //     Fiona Compact, Fred, GoodNews, Hysterical, Ioana Compact, Joana Compact, Junior, Kanya Compact, Karen Compact, Kathy,
