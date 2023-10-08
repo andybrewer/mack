@@ -50,6 +50,7 @@ func buildDialog(text string, options []string) string {
 //  dialog := mack.DialogOptions{
 //    Text:           "Dialog text",          // Required
 //    Title:          "Dialog title",         // Optional
+//    CollectAnswer:  true,                   // Optional - If true, shows a text input to collect answer
 //    Answer:         "Default answer",       // Optional
 //    Duration:       5,                      // Optional
 //    HiddenAnswer:   true,                   // Optional - If true, turns the input text to bullets
@@ -70,7 +71,7 @@ func buildDialogBox(dialog DialogOptions) string {
   if dialog.Title != "" {
     title = "with title " + wrapInQuotes(dialog.Title)
   }
-  if dialog.Answer != "" {
+  if dialog.CollectAnswer || dialog.Answer != "" {
     answer = "default answer " + wrapInQuotes(dialog.Answer)
   }
   if dialog.HiddenAnswer {
@@ -103,6 +104,7 @@ func buildDialogBox(dialog DialogOptions) string {
 type DialogOptions struct {
   Text string           // The content of the dialog box
   Title string          // The title of the dialog box, displayed in emphasis
+  CollectAnswer bool    // If true, shows a text input to collect answer
   Answer string         // The default text in the input field
   HiddenAnswer bool     // If true, converts the answer text to bullets (like a password field)
   Icon string           // The path to a .icns file, or one of the following: "stop", "note", "caution"

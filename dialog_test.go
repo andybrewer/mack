@@ -55,6 +55,14 @@ func TestBuildDialogBox(t *testing.T) {
       actual: buildDialogBox(DialogOptions{
         Text: "text",
         Title: "title",
+        CollectAnswer: true,
+      }),
+      expected: "display dialog \"text\" with title \"title\" default answer \"\"",
+    },
+    StringAssert{
+      actual: buildDialogBox(DialogOptions{
+        Text: "text",
+        Title: "title",
         Answer: "answer",
       }),
       expected: "display dialog \"text\" with title \"title\" default answer \"answer\"",
