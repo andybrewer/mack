@@ -1,3 +1,3 @@
 module github.com/andybrewer/mack
 
-go 1.17
+go 1.21

@@ -14,7 +14,7 @@ import (
 //
 // Use ListWithOpts for more control over the parameters
 //
-//   selected, didCancel, err := mack.List("Pick Things", "thing one", "thing two")
+//	selected, didCancel, err := mack.List("Pick Things", "thing one", "thing two")
 func List(title string, items ...string) (selected []string, didCancel bool, err error) {
 	opts := ListOptions{
 		Title: title,
@@ -26,14 +26,14 @@ func List(title string, items ...string) (selected []string, didCancel bool, err
 // ListWithOpts trigger a desktop list selection box accepting
 // custom parameters.
 //
-//   list := mack.ListOptions{
-//      Items: []string{"item one", 'item two"},
-//      Title: "My List Title",
-//      Message: "Pick one or more items from this list",
-//      DefaultItems: []string{"item one"},
-//      AllowMultiple: true,
-//    }
-//   selected, didCancel, err := ListWithOpts(list)
+//	list := mack.ListOptions{
+//	   Items: []string{"item one", 'item two"},
+//	   Title: "My List Title",
+//	   Message: "Pick one or more items from this list",
+//	   DefaultItems: []string{"item one"},
+//	   AllowMultiple: true,
+//	 }
+//	selected, didCancel, err := ListWithOpts(list)
 func ListWithOpts(list ListOptions) (selected []string, didCancel bool, err error) {
 	return runList(list)
 }
