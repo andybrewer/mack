@@ -6,16 +6,17 @@
 package mack
 
 // Tell tells an application the specified commands
-//  mack.Tell("TextEdit", "activate")  // Activates TextEdit
-//  mack.Tell("TextEdit", "quit")      // Quits TextEdit
-//  mack.Tell("Finder",
-//    "activate",
-//    `open (POSIX file "/Applications")`) // Activate Finder and open the "/Applications" folder
+//
+//	mack.Tell("TextEdit", "activate")  // Activates TextEdit
+//	mack.Tell("TextEdit", "quit")      // Quits TextEdit
+//	mack.Tell("Finder",
+//	  "activate",
+//	  `open (POSIX file "/Applications")`) // Activate Finder and open the "/Applications" folder
 //
 // Parameters:
 //
-//  application string   // Required - What application the system will tell to
-//  commands string      // Required - What command lines the system will tell
+//	application string   // Required - What application the system will tell to
+//	commands string      // Required - What command lines the system will tell
 func Tell(application string, commands ...string) (string, error) {
 	return run(buildTell(application, commands...))
 }

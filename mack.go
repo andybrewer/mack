@@ -21,10 +21,10 @@ import (
 func run(command string) (string, error) {
 	cmd := exec.Command("osascript", "-e", command)
 	output, err := cmd.CombinedOutput()
-	prettyOutput := strings.Replace(string(output), "\n", "", -1)
+	prettyOutput := strings.ReplaceAll(string(output), "\n", "")
 
 	// Ignore errors from the user hitting the cancel button
-	if err != nil && strings.Index(string(output), "User canceled.") < 0 {
+	if err != nil && !strings.Contains(string(output), "User canceled.") {
 		return "", errors.New(err.Error() + ": " + prettyOutput + " (" + command + ")")
 	}
 
@@ -36,7 +36,7 @@ func runWithButtons(command string) (Response, error) {
 	output, err := run(command)
 
 	// Return if the user hit the default cancel button
-	if strings.Index(output, "execution error: User canceled. (-128)") > 0 {
+	if strings.Contains(output, "execution error: User canceled. (-128)") {
 		response := Response{
 			Clicked: "Cancel",
 		}
@@ -124,7 +124,7 @@ func parseResponse(output string, buttons []string) Response {
 		}
 
 		// Don't mess around with regex, just get the text returned
-		if strings.Index(output, ", text returned:") > 0 {
+		if strings.Contains(output, ", text returned:") {
 			output = strings.Replace(output, "button returned:"+clicked+", ", "", 1)
 			output = strings.Replace(output, ", gave up:false", "", 1)
 			output = strings.Replace(output, "text returned:", "", 1)
